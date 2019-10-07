@@ -28,14 +28,56 @@
       <HBox alignment="CENTER" prefHeight="50.0" prefWidth="1366.0" styleClass="hbox-header" stylesheets="@style.css" BorderPane.alignment="CENTER" />
    </bottom>
    <center>
-      <TabPane prefHeight="200.0" prefWidth="200.0" side="LEFT" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
+      <TabPane fx:id="tabpane" prefHeight="200.0" prefWidth="200.0" side="LEFT" stylesheets="@style.css" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
         <tabs>
-          <Tab fx:id="tabProfil" closable="false" />
-          <Tab fx:id="tabMahasiswa" />
-            <Tab fx:id="tabStatistik" />
-            <Tab fx:id="tabPrediksi" />
-            <Tab fx:id="tabHitungipk" />
-            <Tab fx:id="tabAbout" />
+          <Tab fx:id="tabProfil">
+               <graphic>
+                  <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@images/profil.png" />
+                     </image>
+                  </ImageView>
+               </graphic></Tab>
+          <Tab fx:id="tabMahasiswa">
+               <graphic>
+                  <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@images/mahasiswa.png" />
+                     </image>
+                  </ImageView>
+               </graphic></Tab>
+            <Tab fx:id="tabStatistik">
+               <graphic>
+                  <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@images/statistika.png" />
+                     </image>
+                  </ImageView>
+               </graphic></Tab>
+            <Tab fx:id="tabPrediksi">
+               <graphic>
+                  <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@images/prediksi.png" />
+                     </image>
+                  </ImageView>
+               </graphic></Tab>
+            <Tab fx:id="tabHitungipk">
+               <graphic>
+                  <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@images/hitung_ipk.png" />
+                     </image>
+                  </ImageView>
+               </graphic></Tab>
+            <Tab fx:id="tabAbout" styleClass="tabpane">
+               <graphic>
+                  <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@images/about.png" />
+                     </image>
+                  </ImageView>
+               </graphic></Tab>
         </tabs>
       </TabPane>
    </center>
