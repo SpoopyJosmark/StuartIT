@@ -1,0 +1,70 @@
+.hbox-header {
+    -fx-background-color: #08abb9;
+}
+
+.vbox-background {
+    -fx-background-color: rgba(9, 211, 230, 0.05);
+}
+
+.textfield-loginView {
+    -fx-background-color: -fx-text-box-border, white; ;
+    -fx-background-insets: 0, 0 0 1 0 ;
+    -fx-background-radius: 0 ;
+    -fx-font-family: 'Calibri';
+    -fx-font-size: 18;
+}
+
+.textfield-loginView:focused {
+    -fx-background-color: -fx-focus-color, white ;
+    -fx-font-family: 'Calibri';
+    -fx-font-size: 18;
+}
+
+.gridpane-loginView {
+    -fx-background-color: rgba(255, 255, 255, 1.0);
+    -fx-background-radius: 10;
+    -fx-border-color: #08abb9;
+    -fx-border-radius: 10;
+}
+
+.hbox-loginView {
+    -fx-background-color: #08abb9;
+    -fx-background-radius: 10 0 0 10;
+}
+
+.label-loginView {
+    -fx-text-fill: #08abb9;
+    -fx-font-family: 'Calibri';
+    -fx-font-size: 24;
+    -fx-font-weight: bold;
+}
+
+.button-loginView {
+    -fx-background-color: #08abb9;
+    -fx-font-family: 'Calibri';
+    -fx-font-size: 18;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+}
+
+.button-loginView:hover {
+    -fx-background-color: #09dbe6;
+    -fx-font-family: 'Calibri';
+    -fx-font-size: 18;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+}
+
+.button-loginView:pressed {
+    -fx-background-color: #068d99;
+    -fx-font-family: 'Calibri';
+    -fx-font-size: 18;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+}
+
+.label-white {
+    -fx-font-family: 'Calibri';
+    -fx-font-size: 16;
+    -fx-text-fill: white;
+}
