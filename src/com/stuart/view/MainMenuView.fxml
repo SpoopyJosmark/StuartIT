@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1366.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.stuart.controller.MainMenuViewController">
+   <top>
+      <HBox alignment="CENTER_LEFT" prefHeight="75.0" prefWidth="1366.0" styleClass="hbox-header" stylesheets="@style.css" BorderPane.alignment="CENTER">
+         <children>
+            <Pane prefHeight="75.0" prefWidth="250.0">
+               <children>
+                  <ImageView fitHeight="75.0" fitWidth="223.0" layoutX="28.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@images/logo-white.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </Pane>
+         </children>
+      </HBox>
+   </top>
+   <bottom>
+      <HBox alignment="CENTER" prefHeight="50.0" prefWidth="1366.0" styleClass="hbox-header" stylesheets="@style.css" BorderPane.alignment="CENTER" />
+   </bottom>
+   <center>
+      <TabPane fx:id="tabpane" prefHeight="200.0" prefWidth="200.0" side="LEFT" stylesheets="@style.css" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
+        <tabs>
+          <Tab fx:id="tabProfil">
+               <graphic>
+                  <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@images/profil.png" />
+                     </image>
+                  </ImageView>
+               </graphic></Tab>
+          <Tab fx:id="tabMahasiswa">
+               <graphic>
+                  <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@images/mahasiswa.png" />
+                     </image>
+                  </ImageView>
+               </graphic></Tab>
+            <Tab fx:id="tabStatistik">
+               <graphic>
+                  <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@images/statistika.png" />
+                     </image>
+                  </ImageView>
+               </graphic></Tab>
+            <Tab fx:id="tabPrediksi">
+               <graphic>
+                  <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@images/prediksi.png" />
+                     </image>
+                  </ImageView>
+               </graphic></Tab>
+            <Tab fx:id="tabHitungipk">
+               <graphic>
+                  <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@images/hitung_ipk.png" />
+                     </image>
+                  </ImageView>
+               </graphic></Tab>
+            <Tab fx:id="tabAbout" styleClass="tabpane">
+               <graphic>
+                  <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@images/about.png" />
+                     </image>
+                  </ImageView>
+               </graphic></Tab>
+        </tabs>
+      </TabPane>
+   </center>
+</BorderPane>
