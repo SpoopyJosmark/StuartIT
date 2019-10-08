@@ -87,7 +87,7 @@
 
 .table-view .column-header,
 .table-view .column-header-background .filler {
-    -fx-background-color:  #67daff;
+    -fx-background-color:   #08abb9;
 }
 .table-view .column-header .label{
     -fx-text-fill: white;

@@ -57,6 +57,18 @@
                      <children>
                         <VBox prefHeight="200.0" prefWidth="350.0">
                            <children>
+                              <HBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: #08abb9;">
+                                 <children>
+                                    <Label text="Manage Mahasiswa" textFill="WHITE">
+                                       <font>
+                                          <Font name="System Bold" size="18.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                                 <padding>
+                                    <Insets left="20.0" />
+                                 </padding>
+                              </HBox>
                               <VBox prefHeight="400.0" prefWidth="100.0" style="-fx-border-color: #08abb9;">
                                  <children>
                                     <GridPane>
@@ -78,7 +90,7 @@
                                           <Label text="NRP" />
                                           <Label text="Nama Depan" GridPane.rowIndex="2" />
                                           <Label text="IPK" GridPane.rowIndex="6" />
-                                          <TextField GridPane.rowIndex="1" />
+                                          <TextField disable="true" GridPane.rowIndex="1" />
                                           <TextField GridPane.rowIndex="3" />
                                           <TextField GridPane.rowIndex="7" />
                                           <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="8">
