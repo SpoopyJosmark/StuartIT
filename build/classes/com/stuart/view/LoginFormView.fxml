@@ -21,14 +21,14 @@
    <bottom>
       <HBox alignment="CENTER" prefHeight="50.0" prefWidth="200.0" styleClass="hbox-header" stylesheets="@LoginFormStyles.css" BorderPane.alignment="CENTER">
          <children>
-            <Label styleClass="label-white" stylesheets="@style.css" text="© 2019 StuartIT" />
+            <Label styleClass="label-white" stylesheets="@LoginFormStyles.css" text="© 2019 StuartIT" />
          </children>
       </HBox>
    </bottom>
    <center>
-      <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" styleClass="vbox-background" stylesheets="@style.css" BorderPane.alignment="CENTER">
+      <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" styleClass="vbox-background" stylesheets="@LoginFormStyles.css" BorderPane.alignment="CENTER">
          <children>
-            <GridPane prefHeight="250.0" prefWidth="766.0" styleClass="gridpane-loginView" stylesheets="@style.css">
+            <GridPane prefHeight="250.0" prefWidth="766.0" styleClass="gridpane-loginView" stylesheets="@LoginFormStyles.css">
               <columnConstraints>
                 <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                 <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -44,7 +44,7 @@
                   <RowConstraints maxHeight="30.0" minHeight="10.0" prefHeight="20.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" styleClass="hbox-loginView" stylesheets="@style.css" GridPane.rowSpan="2147483647">
+                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" styleClass="hbox-loginView" stylesheets="@LoginFormStyles.css" GridPane.rowSpan="2147483647">
                      <children>
                         <ImageView fitHeight="141.0" fitWidth="320.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -55,27 +55,27 @@
                   </HBox>
                   <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
                      <children>
-                        <Label styleClass="label-loginView" stylesheets="@style.css" text="Username" />
+                        <Label styleClass="label-loginView" stylesheets="@LoginFormStyles.css" text="Username" />
                      </children>
                   </HBox>
                   <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
                      <children>
-                        <TextField fx:id="txtUsername" alignment="CENTER" prefHeight="20.0" prefWidth="300.0" styleClass="textfield-loginView" stylesheets="@style.css" />
+                        <TextField fx:id="txtUsername" alignment="CENTER" prefHeight="20.0" prefWidth="300.0" styleClass="textfield-loginView" stylesheets="@LoginFormStyles.css" />
                      </children>
                   </HBox>
                   <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
                      <children>
-                        <Label styleClass="label-loginView" stylesheets="@style.css" text="Password" />
+                        <Label styleClass="label-loginView" stylesheets="@LoginFormStyles.css" text="Password" />
                      </children>
                   </HBox>
                   <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="4">
                      <children>
-                        <PasswordField fx:id="txtPassword" alignment="CENTER" prefHeight="20.0" prefWidth="300.0" styleClass="textfield-loginView" stylesheets="@style.css" />
+                        <PasswordField fx:id="txtPassword" alignment="CENTER" prefHeight="20.0" prefWidth="300.0" styleClass="textfield-loginView" stylesheets="@LoginFormStyles.css" />
                      </children>
                   </HBox>
                   <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="6">
                      <children>
-                        <Button mnemonicParsing="false" onAction="#btnLoginClick" prefHeight="40.0" prefWidth="150.0" styleClass="button-loginView" stylesheets="@style.css" text="Login" />
+                        <Button mnemonicParsing="false" onAction="#btnLoginClick" prefHeight="40.0" prefWidth="150.0" styleClass="button-loginView" stylesheets="@LoginFormStyles.css" text="Login" />
                      </children>
                   </HBox>
                </children>

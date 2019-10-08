@@ -1,3 +1,7 @@
+.hbox-header {
+    -fx-background-color: #08abb9;
+}
+
 #tabpane {
     -fx-tab-min-height: 5em;
     -fx-tab-max-height: 5em;
@@ -58,4 +62,23 @@
 .table-row-cell:selected {
     -fx-background-color: whitesmoke;
     -fx-text-background-color:  #6622CC;
+}
+
+.label-form {
+    -fx-font-family: 'Calibri';
+    -fx-font-size: 16;
+}
+
+.textfield-mainView {
+    -fx-background-color: -fx-text-box-border, white; ;
+    -fx-background-insets: 0, 0 0 1 0 ;
+    -fx-background-radius: 0 ;
+    -fx-font-family: 'Calibri';
+    -fx-font-size: 18;
+}
+
+.textfield-mainView:focused {
+    -fx-background-color: -fx-focus-color, white ;
+    -fx-font-family: 'Calibri';
+    -fx-font-size: 18;
 }
