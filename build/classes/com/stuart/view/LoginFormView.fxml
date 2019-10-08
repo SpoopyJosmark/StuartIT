@@ -16,10 +16,10 @@
 
 <BorderPane fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1366.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.stuart.controller.LoginFormViewController">
    <top>
-      <HBox prefHeight="75.0" prefWidth="1366.0" styleClass="hbox-header" stylesheets="@style.css" BorderPane.alignment="CENTER" />
+      <HBox prefHeight="75.0" prefWidth="1366.0" styleClass="hbox-header" stylesheets="@LoginFormStyles.css" BorderPane.alignment="CENTER" />
    </top>
    <bottom>
-      <HBox alignment="CENTER" prefHeight="50.0" prefWidth="200.0" styleClass="hbox-header" stylesheets="@style.css" BorderPane.alignment="CENTER">
+      <HBox alignment="CENTER" prefHeight="50.0" prefWidth="200.0" styleClass="hbox-header" stylesheets="@LoginFormStyles.css" BorderPane.alignment="CENTER">
          <children>
             <Label styleClass="label-white" stylesheets="@style.css" text="© 2019 StuartIT" />
          </children>
