@@ -6,6 +6,7 @@ import java.net.URL;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javafx.application.Platform;
 import javafx.beans.property.BooleanProperty;
 import javafx.beans.property.SimpleBooleanProperty;
 import javafx.event.ActionEvent;
@@ -15,7 +16,8 @@ import javafx.fxml.Initializable;
 import javafx.scene.Scene;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
-import javafx.scene.input.KeyCombination;
+import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
@@ -36,6 +38,8 @@ public class LoginFormViewController implements Initializable {
     private BorderPane root;
     
     private Stage mainStage;
+    @FXML
+    private ImageView btnExit;
 
     /**
      * Initializes the controller class.
@@ -79,6 +83,11 @@ public class LoginFormViewController implements Initializable {
             Logger.getLogger(LoginFormViewController.class.getName()).
                     log(Level.SEVERE, null, ex);
         }
+    }
+
+    @FXML
+    private void btnExitClick(MouseEvent event) {
+        Platform.exit();
     }
     
 }

@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.chart.BarChart?>
 <?import javafx.scene.chart.CategoryAxis?>
 <?import javafx.scene.chart.LineChart?>
 <?import javafx.scene.chart.NumberAxis?>
@@ -18,24 +19,52 @@
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.HBox?>
-<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
 <BorderPane fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1366.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.stuart.controller.MainMenuViewController">
    <top>
-      <HBox alignment="CENTER_LEFT" prefHeight="75.0" prefWidth="1366.0" styleClass="hbox-header" stylesheets="@MainMenuStyles.css" BorderPane.alignment="CENTER">
+      <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="1366.0" styleClass="hbox-header" stylesheets="@MainMenuStyles.css" BorderPane.alignment="CENTER">
          <children>
-            <Pane prefHeight="75.0" prefWidth="250.0">
+            <GridPane HBox.hgrow="ALWAYS">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
                <children>
-                  <ImageView fitHeight="64.0" fitWidth="165.0" layoutX="43.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@images/logo-white.png" />
-                     </image>
-                  </ImageView>
+                  <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0">
+                     <children>
+                        <ImageView fitHeight="92.0" fitWidth="214.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@images/logo-white.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                     <padding>
+                        <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+                     </padding>
+                  </HBox>
+                  <HBox alignment="TOP_RIGHT" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1">
+                     <opaqueInsets>
+                        <Insets bottom="16.0" left="16.0" right="16.0" top="16.0" />
+                     </opaqueInsets>
+                     <children>
+                        <ImageView fx:id="btnExit" fitHeight="40.0" fitWidth="40.0" onMouseClicked="#btnExitClick" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@images/exit.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                     <padding>
+                        <Insets bottom="16.0" left="16.0" right="16.0" top="16.0" />
+                     </padding>
+                  </HBox>
                </children>
-            </Pane>
+            </GridPane>
          </children>
       </HBox>
    </top>
@@ -162,8 +191,8 @@
                <content>
                   <GridPane>
                     <columnConstraints>
-                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="631.0" minWidth="10.0" prefWidth="350.0" />
-                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="950.0" minWidth="10.0" prefWidth="950.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="1.7976931348623157E308" minWidth="10.0" prefWidth="350.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="950.0" />
                     </columnConstraints>
                     <rowConstraints>
                       <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
@@ -171,12 +200,12 @@
                      <children>
                         <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1">
                            <children>
-                              <LineChart fx:id="chartLine" prefHeight="643.0" prefWidth="983.0" style="-fx-border-color: #08abb9;" HBox.hgrow="ALWAYS">
+                              <LineChart fx:id="chartStatistik" prefHeight="643.0" prefWidth="983.0" style="-fx-border-color: #08abb9;" HBox.hgrow="ALWAYS">
                                 <xAxis>
-                                  <CategoryAxis fx:id="chartCategory" side="BOTTOM" />
+                                  <CategoryAxis fx:id="categoryChartStatistik" side="BOTTOM" />
                                 </xAxis>
                                 <yAxis>
-                                  <NumberAxis fx:id="numberCategory" side="LEFT" />
+                                  <NumberAxis fx:id="numberStatistik" side="LEFT" />
                                 </yAxis>
                               </LineChart>
                            </children>
@@ -186,7 +215,7 @@
                         </HBox>
                         <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0" spacing="16.0">
                            <GridPane.margin>
-                              <Insets bottom="16.0" left="16.0" right="16.0" top="16.0" />
+                              <Insets />
                            </GridPane.margin>
                            <children>
                               <GridPane style="-fx-border-color: #08abb9;">
@@ -222,7 +251,7 @@
                                     </HBox>
                                     <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="3">
                                        <children>
-                                          <Button fx:id="btnIpkSemester" mnemonicParsing="false" styleClass="button-loginView" stylesheets="@LoginFormStyles.css" text="Hitung" />
+                                          <Button fx:id="btnIpkSemester" mnemonicParsing="false" onAction="#btnIpkSemesterClick" styleClass="button-loginView" stylesheets="@LoginFormStyles.css" text="Hitung" />
                                        </children>
                                        <GridPane.margin>
                                           <Insets />
@@ -266,7 +295,7 @@
                                     </HBox>
                                     <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="3">
                                        <children>
-                                          <Button fx:id="btnRatarata" mnemonicParsing="false" styleClass="button-loginView" stylesheets="@LoginFormStyles.css" text="Hitung" />
+                                          <Button fx:id="btnRatarata" mnemonicParsing="false" onAction="#btnRatarataClick" styleClass="button-loginView" stylesheets="@LoginFormStyles.css" text="Hitung" />
                                        </children>
                                        <GridPane.margin>
                                           <Insets />
@@ -277,7 +306,18 @@
                                     </HBox>
                                  </children>
                               </GridPane>
+                              <HBox alignment="CENTER_RIGHT" prefHeight="50.0" prefWidth="308.0">
+                                 <children>
+                                    <Button fx:id="btnResetStat" mnemonicParsing="false" onAction="#btnResetStatClick" styleClass="button-loginView" stylesheets="@LoginFormStyles.css" text="Reset" />
+                                 </children>
+                                 <padding>
+                                    <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+                                 </padding>
+                              </HBox>
                            </children>
+                           <padding>
+                              <Insets bottom="16.0" left="16.0" right="16.0" top="16.0" />
+                           </padding>
                         </VBox>
                      </children>
                   </GridPane>
@@ -289,7 +329,87 @@
                         <Image url="@images/prediksi.png" />
                      </image>
                   </ImageView>
-               </graphic></Tab>
+               </graphic>
+               <content>
+                  <GridPane>
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="1.7976931348623157E308" minWidth="10.0" prefWidth="350.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="1.7976931348623157E308" minWidth="10.0" prefWidth="950.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <VBox prefHeight="200.0" prefWidth="350.0" spacing="8.0">
+                           <padding>
+                              <Insets bottom="16.0" left="16.0" right="16.0" top="16.0" />
+                           </padding>
+                           <children>
+                              <GridPane style="-fx-border-color: #08abb9;">
+                                 <columnConstraints>
+                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                 </columnConstraints>
+                                 <rowConstraints>
+                                    <RowConstraints minHeight="10.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="50.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="50.0" vgrow="SOMETIMES" />
+                                 </rowConstraints>
+                                 <children>
+                                    <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" styleClass="hbox-header" stylesheets="@LoginFormStyles.css">
+                                       <children>
+                                          <Label text="Kemampuan Mahasiswa" textFill="WHITE">
+                                             <font>
+                                                <Font name="Calibri Bold" size="18.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                    </HBox>
+                                    <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="8.0" GridPane.rowIndex="1">
+                                       <padding>
+                                          <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+                                       </padding>
+                                       <children>
+                                          <ComboBox fx:id="cbPerkemMhs" prefHeight="20.0" prefWidth="300.0" promptText="Pilih nama mahasiswa..." HBox.hgrow="ALWAYS" />
+                                       </children>
+                                    </HBox>
+                                    <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0" spacing="8.0" GridPane.rowIndex="2">
+                                       <padding>
+                                          <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+                                       </padding>
+                                       <children>
+                                          <Button fx:id="btnBuatStat" mnemonicParsing="false" onAction="#btnBuatStatClick" styleClass="button-loginView" stylesheets="@LoginFormStyles.css" text="Buat Statistik" />
+                                       </children>
+                                    </HBox>
+                                 </children>
+                              </GridPane>
+                              <HBox alignment="CENTER_RIGHT" prefHeight="50.0" prefWidth="200.0">
+                                 <padding>
+                                    <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+                                 </padding>
+                                 <children>
+                                    <Button fx:id="btnHapusPrediksi" mnemonicParsing="false" onAction="#btnHapusPrediksiClick" styleClass="button-loginView" stylesheets="@LoginFormStyles.css" text="Hapus" />
+                                 </children>
+                              </HBox>
+                           </children>
+                        </VBox>
+                        <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1">
+                           <padding>
+                              <Insets bottom="16.0" left="16.0" right="16.0" top="16.0" />
+                           </padding>
+                           <children>
+                              <BarChart fx:id="chartPrediksi" style="-fx-border-color: #08abb9;" HBox.hgrow="ALWAYS">
+                                 <xAxis>
+                                    <CategoryAxis fx:id="categoryChartPrediksi" side="BOTTOM" />
+                                 </xAxis>
+                                 <yAxis>
+                                    <NumberAxis fx:id="numberChartPrediksi" side="LEFT" />
+                                 </yAxis>
+                              </BarChart>
+                           </children>
+                        </HBox>
+                     </children>
+                  </GridPane>
+               </content></Tab>
             <Tab fx:id="tabHitungipk">
                <graphic>
                   <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
@@ -386,7 +506,328 @@
                         <Image url="@images/about.png" />
                      </image>
                   </ImageView>
-               </graphic></Tab>
+               </graphic>
+               <content>
+                  <HBox prefHeight="100.0" prefWidth="200.0">
+                     <children>
+                        <VBox prefHeight="643.0" prefWidth="350.0" spacing="8.0">
+                           <children>
+                              <GridPane style="-fx-border-color: #08abb9;">
+                                <columnConstraints>
+                                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                </columnConstraints>
+                                <rowConstraints>
+                                  <RowConstraints minHeight="10.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                </rowConstraints>
+                                 <children>
+                                    <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" styleClass="hbox-header" stylesheets="@LoginFormStyles.css">
+                                       <children>
+                                          <Label text="About" textFill="WHITE">
+                                             <font>
+                                                <Font name="Calibri Bold" size="18.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                    </HBox>
+                                    <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="1">
+                                       <padding>
+                                          <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+                                       </padding>
+                                       <children>
+                                          <Label text="Stuart IT v.1.0 build 1.0.0.0">
+                                             <font>
+                                                <Font name="Calibri Bold" size="18.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                    </HBox>
+                                    <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="2">
+                                       <padding>
+                                          <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+                                       </padding>
+                                       <children>
+                                          <Label text="© 2019 StuartIT">
+                                             <font>
+                                                <Font name="Calibri" size="18.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                    </HBox>
+                                 </children>
+                              </GridPane>
+                              <GridPane style="-fx-border-color: #08abb9;">
+                                <columnConstraints>
+                                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                </columnConstraints>
+                                <rowConstraints>
+                                  <RowConstraints minHeight="10.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                                  <RowConstraints minHeight="10.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                                  <RowConstraints minHeight="10.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                                </rowConstraints>
+                                 <children>
+                                    <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" styleClass="hbox-header" stylesheets="@LoginFormStyles.css">
+                                       <children>
+                                          <Label text="Developers" textFill="WHITE">
+                                             <font>
+                                                <Font name="Calibri Bold" size="18.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                    </HBox>
+                                    <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="8.0" GridPane.rowIndex="2">
+                                       <padding>
+                                          <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+                                       </padding>
+                                       <children>
+                                          <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@images/instagram.png" />
+                                             </image>
+                                          </ImageView>
+                                          <Label text="\@__jonathanb">
+                                             <font>
+                                                <Font name="Calibri" size="18.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                    </HBox>
+                                    <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="8.0" GridPane.rowIndex="3">
+                                       <padding>
+                                          <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+                                       </padding>
+                                       <children>
+                                          <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@images/facebook.png" />
+                                             </image>
+                                          </ImageView>
+                                          <Label text="Jonathan Bernad">
+                                             <font>
+                                                <Font name="Calibri" size="18.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                    </HBox>
+                                    <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="8.0" GridPane.rowIndex="1">
+                                       <padding>
+                                          <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+                                       </padding>
+                                       <children>
+                                          <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@images/profil.png" />
+                                             </image>
+                                          </ImageView>
+                                          <Label text="Jonathan Bernad - 1772004">
+                                             <font>
+                                                <Font name="Calibri Bold" size="18.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                    </HBox>
+                                    <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="8.0" GridPane.rowIndex="5">
+                                       <padding>
+                                          <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+                                       </padding>
+                                       <children>
+                                          <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@images/profil.png" />
+                                             </image>
+                                          </ImageView>
+                                          <Label text="Kafka Febianto Agiharta - 1772012">
+                                             <font>
+                                                <Font name="Calibri Bold" size="18.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                    </HBox>
+                                    <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="8.0" GridPane.rowIndex="6">
+                                       <padding>
+                                          <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+                                       </padding>
+                                       <children>
+                                          <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@images/instagram.png" />
+                                             </image>
+                                          </ImageView>
+                                          <Label text="\@kafkafebian">
+                                             <font>
+                                                <Font name="Calibri" size="18.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                    </HBox>
+                                    <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="8.0" GridPane.rowIndex="7">
+                                       <padding>
+                                          <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+                                       </padding>
+                                       <children>
+                                          <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@images/facebook.png" />
+                                             </image>
+                                          </ImageView>
+                                          <Label text="Kafka Febianto Agiharta">
+                                             <font>
+                                                <Font name="Calibri" size="18.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                    </HBox>
+                                 </children>
+                              </GridPane>
+                           </children>
+                           <padding>
+                              <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+                           </padding>
+                        </VBox>
+                        <VBox prefHeight="200.0" prefWidth="350.0" spacing="8.0">
+                           <padding>
+                              <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+                           </padding>
+                           <children>
+                              <GridPane style="-fx-border-color: #08abb9;">
+                                <columnConstraints>
+                                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                </columnConstraints>
+                                <rowConstraints>
+                                  <RowConstraints minHeight="10.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                                  <RowConstraints minHeight="10.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                                </rowConstraints>
+                                 <children>
+                                    <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" styleClass="hbox-header" stylesheets="@LoginFormStyles.css">
+                                       <children>
+                                          <Label text="Documentation" textFill="WHITE">
+                                             <font>
+                                                <Font name="Calibri Bold" size="18.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                    </HBox>
+                                    <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="8.0" GridPane.rowIndex="1">
+                                       <padding>
+                                          <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+                                       </padding>
+                                       <children>
+                                          <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@images/profil.png" />
+                                             </image>
+                                          </ImageView>
+                                          <Label text="Yosmart">
+                                             <font>
+                                                <Font name="Calibri Bold" size="18.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                    </HBox>
+                                    <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="8.0" GridPane.rowIndex="2">
+                                       <padding>
+                                          <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+                                       </padding>
+                                       <children>
+                                          <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@images/instagram.png" />
+                                             </image>
+                                          </ImageView>
+                                          <Label text="\@yosmart">
+                                             <font>
+                                                <Font name="Calibri" size="18.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                    </HBox>
+                                    <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="8.0" GridPane.rowIndex="3">
+                                       <padding>
+                                          <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+                                       </padding>
+                                       <children>
+                                          <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@images/facebook.png" />
+                                             </image>
+                                          </ImageView>
+                                          <Label text="Yosmart">
+                                             <font>
+                                                <Font name="Calibri" size="18.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                    </HBox>
+                                    <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="8.0" GridPane.rowIndex="5">
+                                       <padding>
+                                          <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+                                       </padding>
+                                       <children>
+                                          <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@images/profil.png" />
+                                             </image>
+                                          </ImageView>
+                                          <Label text="Daniel Eliezer Usmanij">
+                                             <font>
+                                                <Font name="Calibri Bold" size="18.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                    </HBox>
+                                    <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="8.0" GridPane.rowIndex="6">
+                                       <padding>
+                                          <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+                                       </padding>
+                                       <children>
+                                          <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@images/instagram.png" />
+                                             </image>
+                                          </ImageView>
+                                          <Label text="\@daniel">
+                                             <font>
+                                                <Font name="Calibri" size="18.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                    </HBox>
+                                    <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="8.0" GridPane.rowIndex="7">
+                                       <padding>
+                                          <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+                                       </padding>
+                                       <children>
+                                          <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@images/facebook.png" />
+                                             </image>
+                                          </ImageView>
+                                          <Label text="Daniel Eliezer Usmanij">
+                                             <font>
+                                                <Font name="Calibri" size="18.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                    </HBox>
+                                 </children>
+                              </GridPane>
+                           </children>
+                        </VBox>
+                     </children>
+                  </HBox>
+               </content></Tab>
         </tabs>
       </TabPane>
    </center>
