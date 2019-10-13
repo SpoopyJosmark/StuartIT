@@ -1,12 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import javafx.geometry.*?>
-<?import javafx.scene.chart.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.image.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.chart.BarChart?>
 <?import javafx.scene.chart.CategoryAxis?>
@@ -30,7 +23,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1366.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.stuart.controller.MainMenuViewController">
+<BorderPane fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1366.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.stuart.controller.MainMenuViewController">
    <top>
       <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="1366.0" styleClass="hbox-header" stylesheets="@MainMenuStyles.css" BorderPane.alignment="CENTER">
          <children>
@@ -60,7 +53,7 @@
                         <Insets bottom="16.0" left="16.0" right="16.0" top="16.0" />
                      </opaqueInsets>
                      <children>
-                        <ImageView fx:id="btnExit" fitHeight="40.0" fitWidth="40.0" onMouseClicked="#btnExitClick" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fx:id="btnPltfmExit" fitHeight="40.0" fitWidth="40.0" onMouseClicked="#btnExitClick" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@images/exit.png" />
                            </image>
@@ -103,7 +96,7 @@
                                        <children>
                                           <Label text="Profile" textFill="WHITE">
                                              <font>
-                                                <Font name="System Bold" size="18.0" />
+                                                <Font name="Calibri Bold" size="18.0" />
                                              </font>
                                           </Label>
                                        </children>
@@ -120,16 +113,16 @@
                                           </ImageView>
                                           <VBox prefHeight="200.0" prefWidth="100.0" HBox.hgrow="ALWAYS">
                                              <children>
-                                                <Label text="Jonathan Bernad">
+                                                <Label fx:id="lblAdmName" text="Jonathan Bernad">
                                                    <font>
-                                                      <Font name="System Bold" size="24.0" />
+                                                      <Font name="Calibri Bold" size="28.0" />
                                                    </font>
                                                 </Label>
                                                 <Label text="Admin">
                                                    <font>
                                                       <Font size="16.0" />
                                                    </font></Label>
-                                                <Label text="jonathan.tatambihe@gmail.com" textFill="#08abb9">
+                                                <Label fx:id="lblAdmEmail" text="jonathan.tatambihe@gmail.com" textFill="#08abb9">
                                                    <font>
                                                       <Font size="16.0" />
                                                    </font></Label>
@@ -159,11 +152,11 @@
                                           <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
                                        </padding>
                                     </HBox>
-                                    <TableView prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
+                                    <TableView fx:id="tblAdmLog" prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
                                       <columns>
-                                        <TableColumn prefWidth="75.0" text="User" />
-                                        <TableColumn prefWidth="75.0" text="Date" />
-                                          <TableColumn prefWidth="75.0" text="Activity" />
+                                        <TableColumn fx:id="colAdmUser" prefWidth="75.0" text="User" />
+                                        <TableColumn fx:id="colAdmDate" prefWidth="75.0" text="Date" />
+                                          <TableColumn fx:id="colAdmActivity" prefWidth="75.0" text="Activity" />
                                       </columns>
                                        <columnResizePolicy>
                                           <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
@@ -234,12 +227,12 @@
                                              <font>
                                                 <Font name="System Bold" size="18.0" />
                                              </font></Label>
-                                          <TextField disable="true" styleClass="textfield-mainView" stylesheets="@MainMenuStyles.css" GridPane.rowIndex="1" />
-                                          <TextField styleClass="textfield-mainView" stylesheets="@MainMenuStyles.css" GridPane.rowIndex="3" />
-                                          <TextField styleClass="textfield-mainView" stylesheets="@MainMenuStyles.css" GridPane.rowIndex="7" />
+                                          <TextField fx:id="txtMhsNrp" disable="true" styleClass="textfield-mainView" stylesheets="@MainMenuStyles.css" GridPane.rowIndex="1" />
+                                          <TextField fx:id="txtMhsFrntName" styleClass="textfield-mainView" stylesheets="@MainMenuStyles.css" GridPane.rowIndex="3" />
+                                          <TextField fx:id="txtMhsIpk" styleClass="textfield-mainView" stylesheets="@MainMenuStyles.css" GridPane.rowIndex="7" />
                                           <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="8">
                                              <children>
-                                                <Button mnemonicParsing="false" style="-fx-background-color: #08abb9;" text="Update" textFill="WHITE">
+                                                <Button mnemonicParsing="false" onAction="#brnMhsUpdateClick" style="-fx-background-color: #08abb9;" text="Update" textFill="WHITE">
                                                    <font>
                                                       <Font name="Calibri Bold" size="16.0" />
                                                    </font>
@@ -250,7 +243,7 @@
                                              <font>
                                                 <Font name="System Bold" size="18.0" />
                                              </font></Label>
-                                          <TextField styleClass="textfield-mainView" stylesheets="@MainMenuStyles.css" GridPane.rowIndex="5" />
+                                          <TextField fx:id="txtMhsLstName" styleClass="textfield-mainView" stylesheets="@MainMenuStyles.css" GridPane.rowIndex="5" />
                                        </children>
                                     </GridPane>
                                  </children>
@@ -268,11 +261,11 @@
                         </VBox>
                         <HBox prefHeight="643.0" prefWidth="531.0" HBox.hgrow="ALWAYS">
                            <children>
-                              <TableView prefHeight="200.0" prefWidth="200.0" style="-fx-border-color: #08abb9;" HBox.hgrow="ALWAYS">
+                              <TableView fx:id="tblMhsMahasiswa" prefHeight="200.0" prefWidth="200.0" style="-fx-border-color: #08abb9;" HBox.hgrow="ALWAYS">
                                 <columns>
-                                  <TableColumn prefWidth="75.0" text="NRP" />
-                                  <TableColumn prefWidth="75.0" text="Nama" />
-                                    <TableColumn prefWidth="75.0" text="IPK" />
+                                  <TableColumn fx:id="colMhsNrp" prefWidth="75.0" text="NRP" />
+                                  <TableColumn fx:id="colMhsNama" prefWidth="75.0" text="Nama" />
+                                    <TableColumn fx:id="colMhsIpk" prefWidth="75.0" text="IPK" />
                                 </columns>
                                  <columnResizePolicy>
                                     <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
@@ -306,12 +299,12 @@
                      <children>
                         <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1">
                            <children>
-                              <LineChart fx:id="chartStatistik" prefHeight="643.0" prefWidth="983.0" style="-fx-border-color: #08abb9;" HBox.hgrow="ALWAYS">
+                              <LineChart fx:id="chartSts" prefHeight="643.0" prefWidth="983.0" style="-fx-border-color: #08abb9;" HBox.hgrow="ALWAYS">
                                 <xAxis>
-                                  <CategoryAxis fx:id="categoryChartStatistik" side="BOTTOM" />
+                                  <CategoryAxis fx:id="ctgAxisSts" side="BOTTOM" />
                                 </xAxis>
                                 <yAxis>
-                                  <NumberAxis fx:id="numberStatistik" side="LEFT" />
+                                  <NumberAxis fx:id="numAxisSts" side="LEFT" />
                                 </yAxis>
                               </LineChart>
                            </children>
@@ -346,7 +339,7 @@
                                     </HBox>
                                     <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.hgrow="ALWAYS" GridPane.rowIndex="2" GridPane.vgrow="ALWAYS">
                                        <children>
-                                          <ComboBox fx:id="cbIpkSemester" prefHeight="30.0" prefWidth="300.0" promptText="Pilih nama mahasiswa..." style="-fx-border-color: #08abb9;" stylesheets="@MainMenuStyles.css" HBox.hgrow="ALWAYS" />
+                                          <ComboBox fx:id="cbxStsMhs" prefHeight="30.0" prefWidth="300.0" promptText="Pilih nama mahasiswa..." style="-fx-border-color: #08abb9;" stylesheets="@MainMenuStyles.css" HBox.hgrow="ALWAYS" />
                                        </children>
                                        <GridPane.margin>
                                           <Insets />
@@ -357,7 +350,7 @@
                                     </HBox>
                                     <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="3">
                                        <children>
-                                          <Button fx:id="btnIpkSemester" mnemonicParsing="false" onAction="#btnIpkSemesterClick" styleClass="button-loginView" stylesheets="@LoginFormStyles.css" text="Hitung" />
+                                          <Button mnemonicParsing="false" onAction="#btnStsHtngMhsClick" styleClass="button-loginView" stylesheets="@LoginFormStyles.css" text="Hitung" />
                                        </children>
                                        <GridPane.margin>
                                           <Insets />
@@ -390,7 +383,7 @@
                                     </HBox>
                                     <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.hgrow="ALWAYS" GridPane.rowIndex="2" GridPane.vgrow="ALWAYS">
                                        <children>
-                                          <ComboBox fx:id="cbRatarata" prefHeight="30.0" prefWidth="300.0" promptText="Pilih mata kuliah..." style="-fx-border-color: #08abb9;" HBox.hgrow="ALWAYS" />
+                                          <ComboBox fx:id="cbxStsMk" prefHeight="30.0" prefWidth="300.0" promptText="Pilih mata kuliah..." style="-fx-border-color: #08abb9;" HBox.hgrow="ALWAYS" />
                                        </children>
                                        <GridPane.margin>
                                           <Insets />
@@ -401,7 +394,7 @@
                                     </HBox>
                                     <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="3">
                                        <children>
-                                          <Button fx:id="btnRatarata" mnemonicParsing="false" onAction="#btnRatarataClick" styleClass="button-loginView" stylesheets="@LoginFormStyles.css" text="Hitung" />
+                                          <Button mnemonicParsing="false" onAction="#btnStsAvgClick" styleClass="button-loginView" stylesheets="@LoginFormStyles.css" text="Hitung" />
                                        </children>
                                        <GridPane.margin>
                                           <Insets />
@@ -414,7 +407,7 @@
                               </GridPane>
                               <HBox alignment="CENTER_RIGHT" prefHeight="50.0" prefWidth="308.0">
                                  <children>
-                                    <Button fx:id="btnResetStat" mnemonicParsing="false" onAction="#btnResetStatClick" styleClass="button-loginView" stylesheets="@LoginFormStyles.css" text="Reset" />
+                                    <Button mnemonicParsing="false" onAction="#btnStsResetClick" styleClass="button-loginView" stylesheets="@LoginFormStyles.css" text="Reset" />
                                  </children>
                                  <padding>
                                     <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
@@ -475,7 +468,7 @@
                                           <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
                                        </padding>
                                        <children>
-                                          <ComboBox fx:id="cbPerkemMhs" prefHeight="30.0" prefWidth="300.0" promptText="Pilih nama mahasiswa..." HBox.hgrow="ALWAYS" />
+                                          <ComboBox fx:id="cbxPdxMhs" prefHeight="30.0" prefWidth="300.0" promptText="Pilih nama mahasiswa..." HBox.hgrow="ALWAYS" />
                                        </children>
                                     </HBox>
                                     <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0" spacing="8.0" GridPane.rowIndex="2">
@@ -483,7 +476,7 @@
                                           <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
                                        </padding>
                                        <children>
-                                          <Button fx:id="btnBuatStat" mnemonicParsing="false" onAction="#btnBuatStatClick" styleClass="button-loginView" stylesheets="@LoginFormStyles.css" text="Buat Statistik" />
+                                          <Button mnemonicParsing="false" onAction="#btnPdxClick" styleClass="button-loginView" stylesheets="@LoginFormStyles.css" text="Buat Statistik" />
                                        </children>
                                     </HBox>
                                  </children>
@@ -493,7 +486,7 @@
                                     <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
                                  </padding>
                                  <children>
-                                    <Button fx:id="btnHapusPrediksi" mnemonicParsing="false" onAction="#btnHapusPrediksiClick" styleClass="button-loginView" stylesheets="@LoginFormStyles.css" text="Hapus" />
+                                    <Button mnemonicParsing="false" onAction="#btnPdxReset" styleClass="button-loginView" stylesheets="@LoginFormStyles.css" text="Hapus" />
                                  </children>
                               </HBox>
                            </children>
@@ -503,12 +496,12 @@
                               <Insets bottom="16.0" left="16.0" right="16.0" top="16.0" />
                            </padding>
                            <children>
-                              <BarChart fx:id="chartPrediksi" style="-fx-border-color: #08abb9;" HBox.hgrow="ALWAYS">
+                              <BarChart fx:id="chartPdx" style="-fx-border-color: #08abb9;" HBox.hgrow="ALWAYS">
                                  <xAxis>
-                                    <CategoryAxis fx:id="categoryChartPrediksi" side="BOTTOM" />
+                                    <CategoryAxis fx:id="ctgAxisPdx" side="BOTTOM" />
                                  </xAxis>
                                  <yAxis>
-                                    <NumberAxis fx:id="numberChartPrediksi" side="LEFT" />
+                                    <NumberAxis fx:id="numAxisPdx" side="LEFT" />
                                  </yAxis>
                               </BarChart>
                            </children>
@@ -569,13 +562,13 @@
                                                 <Label styleClass="label-form" stylesheets="@MainMenuStyles.css" text="C" GridPane.rowIndex="4" />
                                                 <Label styleClass="label-form" stylesheets="@MainMenuStyles.css" text="D" GridPane.rowIndex="5" />
                                                 <Label styleClass="label-form" stylesheets="@MainMenuStyles.css" text="E" GridPane.rowIndex="6" />
-                                                <TextField styleClass="textfield-mainView" stylesheets="@MainMenuStyles.css" GridPane.columnIndex="2" />
-                                                <TextField styleClass="textfield-mainView" stylesheets="@MainMenuStyles.css" GridPane.columnIndex="2" GridPane.rowIndex="1" />
-                                                <TextField styleClass="textfield-mainView" stylesheets="@MainMenuStyles.css" GridPane.columnIndex="2" GridPane.rowIndex="2" />
-                                                <TextField styleClass="textfield-mainView" stylesheets="@MainMenuStyles.css" GridPane.columnIndex="2" GridPane.rowIndex="3" />
-                                                <TextField styleClass="textfield-mainView" stylesheets="@MainMenuStyles.css" GridPane.columnIndex="2" GridPane.rowIndex="4" />
-                                                <TextField styleClass="textfield-mainView" stylesheets="@MainMenuStyles.css" GridPane.columnIndex="2" GridPane.rowIndex="5" />
-                                                <TextField styleClass="textfield-mainView" stylesheets="@MainMenuStyles.css" GridPane.columnIndex="2" GridPane.rowIndex="6" />
+                                                <TextField fx:id="txtIp_A" styleClass="textfield-mainView" stylesheets="@MainMenuStyles.css" GridPane.columnIndex="2" />
+                                                <TextField fx:id="txtIp_B_plus" styleClass="textfield-mainView" stylesheets="@MainMenuStyles.css" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                                                <TextField fx:id="txtIp_B" styleClass="textfield-mainView" stylesheets="@MainMenuStyles.css" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                                                <TextField fx:id="txtIp_C_plus" styleClass="textfield-mainView" stylesheets="@MainMenuStyles.css" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+                                                <TextField fx:id="txtIp_C" styleClass="textfield-mainView" stylesheets="@MainMenuStyles.css" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+                                                <TextField fx:id="txtIp_D" styleClass="textfield-mainView" stylesheets="@MainMenuStyles.css" GridPane.columnIndex="2" GridPane.rowIndex="5" />
+                                                <TextField fx:id="txtIp_E" styleClass="textfield-mainView" stylesheets="@MainMenuStyles.css" GridPane.columnIndex="2" GridPane.rowIndex="6" />
                                                 <Label styleClass="label-form" stylesheets="@MainMenuStyles.css" text=":" GridPane.columnIndex="1" />
                                                 <Label layoutX="154.0" layoutY="15.0" styleClass="label-form" stylesheets="@MainMenuStyles.css" text=":" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                                                 <Label layoutX="154.0" layoutY="55.0" styleClass="label-form" stylesheets="@MainMenuStyles.css" text=":" GridPane.columnIndex="1" GridPane.rowIndex="2" />
@@ -585,7 +578,7 @@
                                                 <Label layoutX="10.0" layoutY="15.0" styleClass="label-form" stylesheets="@MainMenuStyles.css" text=":" GridPane.columnIndex="1" GridPane.rowIndex="6" />
                                                 <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="7">
                                                    <children>
-                                                      <Button mnemonicParsing="false" style="-fx-background-color: #08abb9;" text="Calculate" textFill="WHITE">
+                                                      <Button mnemonicParsing="false" onAction="#btnIpCalcClick" style="-fx-background-color: #08abb9;" text="Calculate" textFill="WHITE">
                                                          <font>
                                                             <Font name="System Bold" size="15.0" />
                                                          </font>
